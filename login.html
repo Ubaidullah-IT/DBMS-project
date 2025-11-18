@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block body %}
+<div style="display:flex;min-height:80vh;align-items:center;justify-content:center;padding:40px;">
+  <div class="panel" style="width:420px;">
+    <div class="header">
+      <div class="logo">
+        <div class="mark">ND</div>
+        <div>
+          <div style="font-weight:700;font-size:18px">Neon Dark ToDo</div>
+          <div class="hi">Sign in to keep your tasks glowing</div>
+        </div>
+      </div>
+      <div class="hi">Welcome</div>
+    </div>
+
+    <form method="POST" action="{{ url_for('login') }}" style="margin-top:12px;display:flex;flex-direction:column;gap:12px;">
+      <input name="username" placeholder="Username" required style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;">
+      <input name="password" type="password" placeholder="Password" required style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;">
+      <div style="display:flex;gap:8px;justify-content:space-between;align-items:center;">
+        <button class="btn" type="submit">Sign in</button>
+        <a href="{{ url_for('register') }}" class="btn ghost">Create account</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block body %}
+<div style="display:flex;min-height:80vh;align-items:center;justify-content:center;padding:40px;">
+  <div class="panel" style="width:480px;">
+    <div class="header">
+      <div class="logo">
+        <div class="mark">ND</div>
+        <div>
+          <div style="font-weight:700;font-size:18px">Create Account</div>
+          <div class="hi">Join Neon Dark ToDo</div>
+        </div>
+      </div>
+      <div class="hi">Fast & Secure</div>
+    </div>
+
+    <form method="POST" action="{{ url_for('register') }}" style="margin-top:12px;display:flex;flex-direction:column;gap:12px;">
+      <input name="username" placeholder="Choose a username" required>
+      <input name="password" type="password" placeholder="Create a strong password" required>
+      <div style="display:flex;gap:8px;justify-content:flex-end;">
+        <a href="{{ url_for('login') }}" class="btn ghost">Back to Login</a>
+        <button class="btn" type="submit">Create</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

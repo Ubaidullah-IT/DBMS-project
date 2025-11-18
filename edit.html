@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block body %}
+<div style="display:flex;min-height:80vh;align-items:flex-start;justify-content:center;padding:40px;">
+  <div class="panel" style="width:640px;">
+    <div class="header">
+      <div class="logo">
+        <div class="mark">ND</div>
+        <div>
+          <div style="font-weight:700;font-size:18px">Edit Task</div>
+          <div class="hi">Make it perfect ✦</div>
+        </div>
+      </div>
+      <div class="hi"><a href="{{ url_for('index') }}" class="btn ghost">Back</a></div>
+    </div>
+
+    <form method="POST" style="display:flex;flex-direction:column;gap:12px;margin-top:10px;">
+      <input name="title" placeholder="Title" value="{{ task['title'] }}" required>
+      <input name="due_date" type="date" value="{{ task['due_date'] or '' }}">
+      <input id="color_tag" name="color_tag" type="color" value="{{ task['color_tag'] or '#00FFA3' }}">
+      <textarea name="description" rows="4" placeholder="Description" style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;">{{ task['description'] or '' }}</textarea>
+      <div style="display:flex;justify-content:flex-end;gap:8px;">
+        <a href="{{ url_for('index') }}" class="btn ghost">Cancel</a>
+        <button class="btn" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
